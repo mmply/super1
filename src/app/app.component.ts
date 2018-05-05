@@ -4,11 +4,22 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { Config, Nav, Platform } from 'ionic-angular';
 
-import { FirstRunPage } from '../pages';
+//inica la pantalla de tutorial
+//import { FirstRunPage } from '../pages';
+//inicia la pantalla de login
+import { WelcomePage } from '../pages';
 import { Settings } from '../providers';
 
+//importado para el tiempo en splash
+import { timer } from 'rxjs/observable/timer';
+
 @Component({
-  template: `<ion-menu [content]="content">
+  template: `
+  <div *ngIf="showSplash" class="splash">
+    <div class="spinner"></div>
+  </div>
+
+  <ion-menu [content]="content">
     <ion-header>
       <ion-toolbar>
         <ion-title>Pages</ion-title>
@@ -27,7 +38,10 @@ import { Settings } from '../providers';
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = FirstRunPage;
+  rootPage = WelcomePage;
+
+  // para el splash
+  showSplash = true;
 
   @ViewChild(Nav) nav: Nav;
 
@@ -51,6 +65,8 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      // tiempo para el splash
+      timer(3000).subscribe(() => this.showSplash = false);
     });
     this.initTranslate();
   }

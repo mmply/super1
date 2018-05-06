@@ -9,6 +9,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+import { NgxErrorsModule } from '@ultimate/ngxerrors';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -63,6 +65,7 @@ export const firebaseConfig = {
     AngularFireAuthModule,
     BrowserModule,   
     HttpClientModule,
+    NgxErrorsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

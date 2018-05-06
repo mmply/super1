@@ -14,7 +14,7 @@ import { Settings } from '../providers';
 import { timer } from 'rxjs/observable/timer';
 
 @Component({
-  template: `
+  template:`
   <div *ngIf="showSplash" class="splash">
     <div class="spinner"></div>
   </div>
@@ -28,14 +28,29 @@ import { timer } from 'rxjs/observable/timer';
 
     <ion-content>
       <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-          {{p.title}}
-        </button>
+        <ion-item *ngFor="let p of pages" (click)="openPage(p)">
+			  <ion-icon [name]="p.icon" item-left></ion-icon>
+			    {{p.title}}
+		    </ion-item>
+
+        
+
+		<ion-item (click)="logout()" >
+			<ion-icon name="log-out" item-left></ion-icon>
+			Log out
+		</ion-item>
+
+		<ion-item (click)="login()" >
+			<ion-icon name="log-in" item-left></ion-icon>
+			Log in
+		</ion-item>
+
       </ion-list>
     </ion-content>
 
   </ion-menu>
-  <ion-nav #content [root]="rootPage"></ion-nav>`
+  <ion-nav #content [root]="rootPage"></ion-nav>
+  `
 })
 export class MyApp {
   rootPage = WelcomePage;

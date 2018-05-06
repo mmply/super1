@@ -9,6 +9,10 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 import { Items } from '../mocks/providers/items';
 import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
@@ -34,6 +38,17 @@ export function provideSettings(storage: Storage) {
   });
 }
 
+export const firebaseConfig = {
+  
+  apiKey: "AIzaSyD3ikwlbGSBPPFUI8yhijLYEO_p-2MjT5E",
+  authDomain: "logi-53343.firebaseapp.com",
+  databaseURL: "https://logi-53343.firebaseio.com",
+  projectId: "logi-53343",
+  storageBucket: "logi-53343.appspot.com",
+  messagingSenderId: "1033474930223"
+  
+}
+
 
 
 @NgModule({
@@ -41,7 +56,10 @@ export function provideSettings(storage: Storage) {
     MyApp
   ],
   imports: [
-    BrowserModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
+    BrowserModule,   
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
@@ -50,8 +68,10 @@ export function provideSettings(storage: Storage) {
         deps: [HttpClient]
       }
     }),
+    
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [

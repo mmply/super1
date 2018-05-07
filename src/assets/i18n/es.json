@@ -5,9 +5,11 @@
   "LOGIN": "Iniciar sesión",
   "SIGNUP": "Registrarse",
 
-  "TAB1_TITLE": "Items",
+  "TAB1_TITLE": "Inicio",
   "TAB2_TITLE": "Buscar",
   "TAB3_TITLE": "Ajustes",
+  "TAB4_TITLE": "Ley",
+  "TAB5_TITLE": "Contacto",
 
   "MAP_TITLE": "Mapa",
 
@@ -39,12 +41,14 @@
   "SIGNUP_ERROR": "No se ha podido crear la cuenta. Por favor revisa la información de la cuenta e inténtalo de nuevo.",
   "SIGNUP_BUTTON": "Registrarse",
 
-  "LIST_MASTER_TITLE": "Items",
+  "LIST_MASTER_TITLE": "Inicio",
 
   "ITEM_CREATE_TITLE": "Nuevo Item",
   "ITEM_CREATE_CHOOSE_IMAGE": "Añadir Imagen",
 
   "CARDS_TITLE": "Social",
 
-  "SEARCH_TITLE": "Buscar"
+  "SEARCH_TITLE": "Buscar",
+  
+  "LEY_TITLE": "LEY"
 }

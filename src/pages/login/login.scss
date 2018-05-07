@@ -1,2 +1,15 @@
 page-login {
+    .container-logo {
+        display: inline-block;
+        width: 100%;
+        margin: 20px 0;
+        img {
+          max-width: 250px;
+        }
+      }
+      .main-content {
+       
+        min-height: 100%;
+      }
 }
+

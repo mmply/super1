@@ -60,9 +60,11 @@ export class LoginPage {
 			);
     }
 
+  //Metodo direcciona pagina de registro
   signup(){
-    this.navCtrl.push(SignupPage);
+    //this.navCtrl.push(SignupPage);
   }
+
   loginWithGoogle() {
   this.auth.signInWithGoogle()
     .then(

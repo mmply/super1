@@ -15,15 +15,28 @@
 <ion-content>
 
   <ion-list>
+    <ion-row>
     <ion-item-sliding *ngFor="let item of currentItems">
       <button ion-item (click)="openItem(item)">
-        <ion-avatar item-start>
-          <img [src]="item.profilePic" />
-        </ion-avatar>
+        <ion-card>
+               <img [src]="item.profilePic" />
+        
         <h2>{{item.name}}</h2>
-        <p>{{item.about}}</p>
         <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>
+        <ion-col>
+        <button ion-button color="primary" clear small icon-start>
+          <ion-icon name="star"></ion-icon>
+            {{item.mensj}}
+          </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          {{item.about}}
+        </ion-note>
+      </ion-col>
+        </ion-card>
       </button>
+      
 
       <ion-item-options>
         <button ion-button color="danger" (click)="deleteItem(item)">
@@ -31,5 +44,6 @@
         </button>
       </ion-item-options>
     </ion-item-sliding>
+    </ion-row>
   </ion-list>
 </ion-content>

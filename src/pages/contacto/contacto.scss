@@ -1,0 +1,26 @@
+page-contacto {
+    .container-logo {
+        display: inline-block;
+        width: 100%;
+        margin: 20px 0;
+        img {
+          max-width: 250px;
+          text-align: center;
+        }
+      }
+      .main-content {
+       text-align: center;
+        min-height: 100%;  
+          
+      }
+
+      .text {
+          text-align: center;
+      }
+      p{
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 100%;
+        color: rgb(0, 0, 0)
+      }
+}
